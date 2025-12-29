@@ -4,7 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>yotuba777のホームページ</title>
-        <link rel="icon" type="image/png" href="/withcopyright/y7.png">
+        <link rel="icon" href="/withcopyright/y7.svg" type="image/svg+xml">
+        <link rel="icon" href="/withcopyright/y7.png" type="image/png">
+        <link rel="apple-touch-icon" href="/withcopyright/y7.png">
         <style>
             * {
                 box-sizing: border-box;
@@ -16,9 +18,15 @@
                 background-color: #111;
                 color: #fff;
                 font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Hiragino Sans", "ヒラギノ角ゴ ProN W3", "Yu Gothic", "メイリオ", Meiryo, sans-serif;
-                min-height: 100dvh;
+                min-height: 100vh;
                 display: flex;
                 flex-direction: column;
+            }
+
+            @supports (height: 100dvh) {
+                body {
+                    min-height: 100dvh;
+                }
             }
 
             header {
@@ -28,6 +36,8 @@
                 align-items: center;
                 justify-content: space-between;
                 padding: 0 24px;
+                position: relative;
+                z-index: 2000;
             }
 
             .header-logo {
@@ -43,7 +53,7 @@
 
             .header-menu-btn {
                 background: none;
-                border: none;
+                border: 1px solid #222;
                 color: #fff;
                 font-size: 20px;
                 cursor: pointer;
@@ -54,18 +64,61 @@
                 justify-content: center;
                 border-radius: 50%;
                 background-color: #000;
+                transition: transform 0.2s;
             }
             
             .header-menu-btn::after {
                 content: "⋮";
+                font-weight: bold;
             }
 
             .content-wrapper {
                 background-color: #000;
                 display: flex;
+                flex-direction: column;
                 flex: 1;
                 border-radius: 30px;
                 margin: 0;
+                position: relative;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background-color: rgba(22, 22, 22, 0.7);
+                backdrop-filter: blur(3px);
+                border: 1px solid #222;
+                padding: 20px;
+                border-radius: 35px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                z-index: 1000;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+            }
+
+            .nav-menu.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .nav-menu a {
+                color: white;
+                font-size: 1.5rem;
+                text-decoration: none;
+                text-align: center;
+                font-weight: 500;
+                white-space: nowrap;
+            }
+
+            .nav-menu a:hover {
+                opacity: 0.7;
+                text-decoration: none;
             }
 
             main {
@@ -88,13 +141,13 @@
                 font-size: 12px;
             }
 
-            a { 
-                color: #4da6ff; 
-                text-decoration: none; 
+            a {
+                color: #4da6ff;
+                text-decoration: none;
             }
             
-            a:hover { 
-                text-decoration: underline; 
+            a:hover {
+                text-decoration: underline;
             }
 
             .footer-content {
@@ -126,8 +179,8 @@
                 color: #eee;
             }
 
-            .footer-right { 
-                text-align: right; 
+            .footer-right {
+                text-align: right;
             }
 
             .site-id {
@@ -143,151 +196,49 @@
             }
 
             @media (max-width: 320px) {
-                h1 {
-                    font-size: 1.2rem;
-                }
-
-                header {
-                    padding: 0 12px;
-                }
-
-                main {
-                    padding: 24px 12px;
-                }
-
-                .footer-content {
-                    flex-direction: column;
-                    align-items: flex-start;
-                }
-
-                .footer-right {
-                    width: 100%;
-                    text-align: right;
-                    margin-top: 16px;
-                }
-
-                .footer-links {
-                    gap: 4px;
-                    flex-direction: column;
-                }
-
-                .footer-links a {
-                    font-size: 11px;
-                }
-
-                .site-id {
-                    font-size: 18px;
-                }
+                h1 { font-size: 1.2rem; }
+                header { padding: 0 12px; }
+                main { padding: 24px 12px; }
+                .nav-menu { right: 12px; padding: 20px; border-radius: 30px; }
+                .nav-menu a { font-size: 1.1rem; }
+                .footer-content { flex-direction: column; align-items: flex-start; }
+                .footer-right { width: 100%; text-align: right; margin-top: 16px; }
+                .footer-links { gap: 4px; flex-direction: column; }
+                .footer-links a { font-size: 11px; }
+                .site-id { font-size: 18px; }
             }
 
             @media (min-width: 321px) and (max-width: 480px) {
-                h1 {
-                    font-size: 1.4rem;
-                }
-
-                header {
-                    padding: 0 16px;
-                }
-
-                main {
-                    padding: 32px 16px;
-                }
-
-                .footer-links {
-                    gap: 6px;
-                }
-
-                .footer-links a {
-                    font-size: 12px;
-                }
-
-                .site-id {
-                    font-size: 20px;
-                }
+                h1 { font-size: 1.4rem; }
+                header { padding: 0 16px; }
+                main { padding: 32px 16px; }
+                .nav-menu { right: 16px; padding: 24px; }
+                .nav-menu a { font-size: 1.2rem; }
+                .footer-links a { font-size: 12px; }
+                .site-id { font-size: 20px; }
             }
 
             @media (min-width: 481px) and (max-width: 600px) {
-                h1 {
-                    font-size: 1.6rem;
-                }
-
-                header {
-                    padding: 0 20px;
-                }
-
-                main {
-                    padding: 40px 20px;
-                }
-
-                .footer-content {
-                    flex-direction: column;
-                    align-items: flex-start;
-                }
-
-                .footer-right {
-                    width: 100%;
-                    text-align: right;
-                    margin-top: 20px;
-                }
-
-                .footer-links {
-                    flex-wrap: wrap;
-                    gap: 8px;
-                }
-
-                .footer-links a {
-                    font-size: 12px;
-                }
-
-                .site-id {
-                    font-size: 22px;
-                }
+                h1 { font-size: 1.6rem; }
+                header { padding: 0 20px; }
+                main { padding: 40px 20px; }
+                .footer-content { flex-direction: column; align-items: flex-start; }
+                .footer-right { width: 100%; text-align: right; margin-top: 20px; }
+                .site-id { font-size: 22px; }
             }
 
             @media (min-width: 601px) and (max-width: 768px) {
-                h1 {
-                    font-size: 2.5rem;
-                }
-
-                header {
-                    padding: 0 24px;
-                }
-
-                main {
-                    padding: 50px 30px;
-                }
-
-                .footer-content {
-                    flex-direction: row;
-                    align-items: flex-end;
-                }
-
-                .footer-right {
-                    margin-top: 0;
-                }
-
-                .footer-left {
-                    flex: 1;
-                }
-
-                .footer-right {
-                    flex-shrink: 0;
-                    margin-left: 24px;
-                }
-
-                .site-id {
-                    font-size: 24px;
-                }
+                h1 { font-size: 2.5rem; }
+                header { padding: 0 24px; }
+                main { padding: 50px 30px; }
+                .footer-content { flex-direction: row; }
+                .footer-right { margin-top: 0; margin-left: 24px; }
+                .site-id { font-size: 24px; }
             }
 
             @media (min-width: 769px) and (max-width: 1024px) {
-                h1 {
-                    font-size: 2.4rem;
-                }
-
-                main {
-                    padding: 60px 40px;
-                }
+                h1 { font-size: 2.4rem; }
+                main { padding: 60px 40px; }
             }
         </style>
     </head>
@@ -297,13 +248,21 @@
                 <picture>
                     <source srcset="/withcopyright/logo.svg" type="image/svg+xml">
                     <source srcset="/withcopyright/logo.png" type="image/png">
-                    <img src="/withcopyright/logo.jpg" alt="y777" class="logo-img">
+                    <img src="/withcopyright/logo.jpg" alt="y777 logo" class="logo-img">
                 </picture>
             </div>
             <button class="header-menu-btn" id="menuBtn" aria-label="メニュー"></button>
         </header>
 
         <div class="content-wrapper">
+            <nav class="nav-menu" id="navMenu">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/links">Links</a>
+                <a href="https://y777.uk">Stable Ver.</a>
+                <a href="https://blog.y777.uk">Blog</a>
+            </nav>
+
             <main>
                 <h1>yotuba777のホームページ</h1>
             </main>
@@ -317,7 +276,7 @@
                         <div class="footer-links">
                             <a href="https://x.com/y777_yotuba777">[Twitter (1)]</a>
                             <a href="https://x.com/Twit_yotuba777">[Twitter (2)]</a>
-                            <a href="https://x.com/Yotuba777_Sub ">[Twitter (Sub)]</a>
+                            <a href="https://x.com/Yotuba777_Sub">[Twitter (Sub)]</a>
                             <a href="https://yotuba777onbluesky.bsky.social">[Bluesky]</a>
                             <a href="https://github.com/y777-yotuba777">[GitHub]</a>
                         </div>
@@ -334,7 +293,7 @@
                             &copy; 2025 y777_yotuba777<br>
                             Content is dedicated to the public domain under CC0 1.0 with some EXCEPT (check details)<br>
                             Third-party content is subject to respective licenses<br>
-                            <a href="/licenses.txt" class="details-link">Details</a>
+                            <a href="/licenses.txt">Details</a>
                         </div>
                     </div>
 
@@ -348,8 +307,18 @@
         </footer>
 
         <script>
-            document.getElementById('menuBtn').addEventListener('click', () => {
-                alert('テスト段階');
+            const menuBtn = document.getElementById('menuBtn');
+            const navMenu = document.getElementById('navMenu');
+
+            menuBtn.addEventListener('click', (event) => {
+                navMenu.classList.toggle('active');
+                event.stopPropagation();
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!navMenu.contains(event.target) && event.target !== menuBtn) {
+                    navMenu.classList.remove('active');
+                }
             });
         </script>
     </body>
