@@ -26,7 +26,8 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0 24px;
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 2000;
 }
 
@@ -47,14 +48,13 @@ header {
     color: #fff;
     font-size: 20px;
     cursor: pointer;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     background-color: #000;
-    transition: transform 0.2s;
 }
 
 .header-menu-btn::after {
@@ -62,20 +62,11 @@ header {
     font-weight: bold;
 }
 
-.content-wrapper {
-    background-color: #000;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    border-radius: 30px;
-    margin: 0;
-    position: relative;
-}
-
 .nav-menu {
-    position: absolute;
-    top: 20px;
+    position: fixed;
+    top: 60px;
     right: 20px;
+    max-height: calc(100vh - 120px);
     background-color: rgba(22, 22, 22, 0.7);
     backdrop-filter: blur(3px);
     border: 1px solid #222;
@@ -104,11 +95,26 @@ header {
     text-align: center;
     font-weight: 500;
     white-space: nowrap;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 .nav-menu a:hover {
     opacity: 0.7;
     text-decoration: none;
+}
+
+.content-wrapper {
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border-radius: 30px;
+    margin: 0;
+    position: relative;
 }
 
 main {
@@ -189,7 +195,7 @@ a:hover {
     h1 { font-size: 1.2rem; }
     header { padding: 0 12px; }
     main { padding: 24px 12px; }
-    .nav-menu { right: 12px; padding: 20px; border-radius: 30px; }
+    .nav-menu { right: 12px; max-width: calc(100vw - 24px); padding: 20px; border-radius: 30px; }
     .nav-menu a { font-size: 1.1rem; }
     .footer-content { flex-direction: column; align-items: flex-start; }
     .footer-right { width: 100%; text-align: right; margin-top: 16px; }
