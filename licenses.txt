@@ -11,7 +11,7 @@ EXCEPTIONS
 ----------
 The following content is NOT covered by CC0:
 - All files within: /withcopyright/*
-  © 2025 y777_yotuba777. All Rights Reserved.
+  © 2025-2026 y777_yotuba777. All Rights Reserved.
   → Requires explicit prior written permission for any use
 
 THIRD-PARTY CONTENT
@@ -26,4 +26,4 @@ Verification:
 - Copyright status of exceptions: Explicitly marked in file metadata within /withcopyright/
 - Third-party rights: Attributed where feasible per applicable laws
 
-Last updated: 2025-12-14
+Last updated: 2026-01-01
