@@ -16,12 +16,6 @@ html, body {
     flex-direction: column;
 }
 
-@supports (height: 100svh) {
-    body {
-        min-height: 100svh;
-    }
-}
-
 header {
     background-color: #111;
     height: 40px;
