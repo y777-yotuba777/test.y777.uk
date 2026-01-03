@@ -15,9 +15,9 @@ html, body {
     flex-direction: column;
 }
 
-@supports (height: 100dvh) {
+@supports (height: 100svh) {
     body {
-        min-height: 100dvh;
+        min-height: 100svh;
     }
 }
 
