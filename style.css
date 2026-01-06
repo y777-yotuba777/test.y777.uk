@@ -100,7 +100,7 @@ header {
     transform: translateY(0);
 }
 
-.nav-menu a {
+.nav-menu li {
     color: #fff;
     font-size: 1.5rem;
     text-decoration: none;
