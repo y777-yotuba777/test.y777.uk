@@ -16,7 +16,7 @@ html, body {
     flex-direction: column;
 }
 
-ul {
+li {
     list-style: none;
 }
 
