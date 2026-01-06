@@ -87,6 +87,7 @@ header {
     border-radius: 35px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 15px;
     z-index: 1000;
     opacity: 0;
@@ -108,6 +109,9 @@ header {
     text-align: center;
     font-weight: 500;
     white-space: nowrap;
+    display: block;
+    width: 100%;
+    text-align: center;
     text-shadow: 
          1px  1px 0 #000,
         -1px  1px 0 #000,
