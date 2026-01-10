@@ -152,13 +152,13 @@ main {
 
 main .title {
     top: -10px;
-    font-size: clamp(1.2rem, 7vw, 4rem);
+    font-size: clamp(1.5rem, 7vw, 4rem);
     font-weight: normal;
     text-align: center;
 }
 
 main .name {
-    font-size: clamp(1.2rem, 7vw, 4rem);
+    font-size: clamp(1.5rem, 7vw, 4rem);
     font-weight: normal;
     align-items: center;
     text-align: center;
