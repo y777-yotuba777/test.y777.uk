@@ -4,7 +4,7 @@ const navMenu = document.getElementById('navMenu');
 menuBtn.addEventListener('click', (event) => {
     const isExpanded = navMenu.classList.contains('active');
     navMenu.classList.toggle('active');
-    menuBtn.setAttribute(' aria-expanded', (!isExpanded).toString());
+    menuBtn.setAttribute('aria-expanded', (!isExpanded).toString());
     event.stopPropagation();
 });
 
