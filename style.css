@@ -1,28 +1,66 @@
+:root {
+    --bg-main: #000;
+    --bg-sub: #111;
+    --bg-nav: rgba(22, 22, 22, 0.7);
+    --txt-main: #fff;
+    --txt-sub: #eee;
+    --txt-ver: #888;
+    --txt-link: #4da6ff;
+    --txt-link-hl: #2f88e1;
+    --border-subtle: #222;
+    --accessibility-focus: #ffbb33;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+        --bg-main: #eee;
+        --bg-sub: #fff;
+        --bg-nav: rgba(255, 255, 255, 0.7);
+        --txt-main: #000;
+        --txt-sub: #222;
+        --txt-ver: #888;
+        --txt-link: #0066cc;
+        --txt-link-hl: #1e84ea;
+        --border-subtle: #ddd;
+        --accessibility-focus: #d46a00;
+  }
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+*:focus-visible {
+    outline: 3px solid var(--accessibility-focus);
+    outline-offset: 2px;
+}
+
 html, body {
     overscroll-behavior: none;
     -webkit-overflow-scrolling: touch;
-    background-color: #111;
-    color: #fff;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Hiragino Sans", "ヒラギノ角ゴ ProN W3", "Yu Gothic", "メイリオ", Meiryo, sans-serif;
+    background-color: var(--bg-sub);
+    color: var(--txt-main);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
     min-height: 100vh;
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
 }
 
+a {
+    color: var(--txt-link);
+    text-decoration: underline;
+}
+
 header {
-    background-color: #111;
+    background-color: var(--bg-sub);
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 24px;
+    padding: 0 clamp(12px, 5vw, 24px);
     position: sticky;
     top: 0;
     z-index: 2000;
@@ -41,8 +79,8 @@ header {
 
 .header-menu-btn {
     background: none;
-    border: 1px solid #222;
-    color: #fff;
+    border: 1px solid var(--border-subtle);
+    color: var(--txt-main);
     font-size: 20px;
     cursor: pointer;
     width: 36px;
@@ -51,7 +89,7 @@ header {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background-color: #000;
+    background-color: var(--bg-main);
 }
 
 .header-menu-btn::after {
@@ -60,7 +98,7 @@ header {
 }
 
 .content-wrapper {
-    background-color: #000;
+    background-color: var(--bg-main);
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -72,13 +110,13 @@ header {
 .nav-menu {
     position: fixed;
     top: 60px;
-    right: 20px;
+    right: clamp(12px, 4vw, 20px);
     max-height: calc(100vh - 120px);
-    background-color: rgba(22, 22, 22, 0.7);
+    background-color: var(--bg-nav);
     backdrop-filter: blur(3px);
-    border: 1px solid #222;
-    padding: 20px;
-    border-radius: 35px;
+    border: 1px solid var(--border-subtle);
+    padding: clamp(20px, 5vw, 28px);
+    border-radius: clamp(24px, 6vw, 35px);
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -86,7 +124,7 @@ header {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
 .nav-menu.active {
@@ -96,51 +134,60 @@ header {
 }
 
 .nav-menu a {
-    color: #fff;
+    color: var(--txt-main);
     font-size: 1.5rem;
     text-decoration: none;
     text-align: center;
     font-weight: 500;
     white-space: nowrap;
-    text-shadow: 
-         1px  1px 0 #000,
-        -1px  1px 0 #000,
-         1px -1px 0 #000,
-        -1px -1px 0 #000;
-}
-
-.nav-menu a:hover {
-    opacity: 0.7;
-    text-decoration: none;
+    text-shadow: 0 0 3px var(--bg-main);
 }
 
 main {
     flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
+    flex-direction: column;
+    padding: 8px clamp(12px, 4vw, 40px) 24px;
 }
 
-h1 {
-    font-size: 3rem;
+main .title {
+    top: -10px;
+    font-size: clamp(1.2rem, 8vw, 4rem);
     font-weight: normal;
     text-align: center;
 }
 
+main .name {
+    font-size: clamp(1.2rem, 8vw, 4rem);
+    font-weight: normal;
+    align-items: center;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+main p {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    text-align: left;
+}
+
+main p + h2 {
+  margin-top: 15px;
+}
+
+main h2 + p {
+  margin-bottom: 5px;
+}
+
+main h2 {
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    font-weight: normal;
+}
+
 footer {
-    background-color: #111;
+    background-color: var(--bg-sub);
     padding: 30px 24px 20px;
     font-size: 12px;
-}
-
-a {
-    color: #4da6ff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 .footer-content {
@@ -158,7 +205,7 @@ a:hover {
 .footer-section h3 {
     font-size: 12px;
     font-weight: normal;
-    color: #fff;
+    color: var(--txt-main);
     margin-bottom: 4px;
 }
 
@@ -169,7 +216,7 @@ a:hover {
 }
 
 .footer-license {
-    color: #eee;
+    color: var(--txt-sub);
 }
 
 .footer-right {
@@ -177,61 +224,78 @@ a:hover {
 }
 
 .site-id {
-    font-size: 24px;
-    color: #fff;
+    font-size: clamp(16px, 5.3vw, 24px);
+    color: var(--txt-main);
     letter-spacing: 1px;
 }
 
 .version {
     margin-top: 10px;
-    color: #888;
+    color: var(--txt-ver);
     font-size: 11px;
 }
 
 @media (max-width: 320px) {
-    h1 { font-size: 1.2rem; }
-    header { padding: 0 12px; }
-    main { padding: 24px 12px; }
     .nav-menu { right: 12px; max-width: calc(100vw - 24px); padding: 20px; border-radius: 30px; }
     .nav-menu a { font-size: 1.1rem; }
-    .footer-content { flex-direction: column; align-items: flex-start; }
-    .footer-right { width: 100%; text-align: right; margin-top: 16px; }
     .footer-links { gap: 4px; flex-direction: column; }
     .footer-links a { font-size: 11px; }
-    .site-id { font-size: 18px; }
 }
 
 @media (min-width: 321px) and (max-width: 480px) {
-    h1 { font-size: 1.4rem; }
-    header { padding: 0 16px; }
-    main { padding: 32px 16px; }
-    .footer-content { flex-direction: column; align-items: flex-start; }
-    .footer-right { width: 100%; text-align: right; margin-top: 16px; }
-    .nav-menu { right: 16px; padding: 24px; }
     .nav-menu a { font-size: 1.2rem; }
     .footer-links a { font-size: 12px; }
-    .site-id { font-size: 20px; }
 }
 
 @media (min-width: 481px) and (max-width: 600px) {
-    h1 { font-size: 1.6rem; }
-    header { padding: 0 20px; }
-    main { padding: 40px 20px; }
-    .footer-content { flex-direction: column; align-items: flex-start; }
-    .footer-right { width: 100%; text-align: right; margin-top: 16px; }
-    .site-id { font-size: 22px; }
+    /* Previously existed but has now been consolidated into the max-width 600px section */
 }
 
+@media (max-width: 600px) {
+    .footer-content { flex-direction: column; align-items: flex-start; }
+    .footer-right { width: 100%; text-align: right; margin-top: 16px; }
+}
+
+
 @media (min-width: 601px) and (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    header { padding: 0 24px; }
-    main { padding: 50px 30px; }
     .footer-content { flex-direction: row; }
     .footer-right { margin-top: 0; margin-left: 24px; }
-    .site-id { font-size: 24px; }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    h1 { font-size: 2.4rem; }
-    main { padding: 60px 40px; }
+    /* Previously existed but is now unnecessary due to clamp support */
+}
+
+/* Accessibility and Interaction Enhancements */
+@media (hover: hover) and (pointer: fine) {
+    a:hover {
+        color: var(--txt-link-hl);
+    }
+
+    .nav-menu a:hover {
+        opacity: 0.7;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nav-menu {
+        transition: none;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+
+    .nav-menu.active {
+        visibility: visible !important;
+    }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+    :root {
+        --bg-nav: #222;
+    }
+    @media (prefers-color-scheme: light) {
+        :root {
+            --bg-nav: #fff;
+        }
+    }
 }
