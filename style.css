@@ -51,6 +51,7 @@ html, body {
 
 a {
     color: var(--txt-link);
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
     text-decoration: underline;
 }
 
@@ -167,7 +168,7 @@ main .name {
 }
 
 main p {
-    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
     text-align: left;
 }
 
@@ -180,7 +181,7 @@ main h2 + p {
 }
 
 main h2 {
-    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    font-size: clamp(1.4rem, 5vw, 2rem);
     font-weight: normal;
 }
 
@@ -239,12 +240,10 @@ footer {
     .nav-menu { right: 12px; max-width: calc(100vw - 24px); padding: 20px; border-radius: 30px; }
     .nav-menu a { font-size: 1.1rem; }
     .footer-links { gap: 4px; flex-direction: column; }
-    .footer-links a { font-size: 11px; }
 }
 
 @media (min-width: 321px) and (max-width: 480px) {
     .nav-menu a { font-size: 1.2rem; }
-    .footer-links a { font-size: 12px; }
 }
 
 @media (min-width: 481px) and (max-width: 600px) {
