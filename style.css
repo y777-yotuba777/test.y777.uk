@@ -14,11 +14,11 @@
 @media (prefers-color-scheme: light) {
     :root {
         --bg-main: #eee;
-        --bg-sub: #fff;
+        --bg-sub: #ddd;
         --bg-nav: rgba(255, 255, 255, 0.7);
         --txt-main: #000;
         --txt-sub: #222;
-        --txt-ver: #555;
+        --txt-ver: #444;
         --txt-link: #06c;
         --txt-link-hl: #1e84ea;
         --border-subtle: #ddd;
