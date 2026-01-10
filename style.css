@@ -32,6 +32,10 @@
     padding: 0;
 }
 
+*:focus {
+    outline: none;
+}
+
 *:focus-visible {
     outline: 3px solid var(--kb-focus);
     outline-offset: 2px;
