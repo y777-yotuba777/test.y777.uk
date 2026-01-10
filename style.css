@@ -12,7 +12,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
+    :root {
         --bg-main: #eee;
         --bg-sub: #fff;
         --bg-nav: rgba(255, 255, 255, 0.7);
@@ -23,7 +23,7 @@
         --txt-link-hl: #1e84ea;
         --border-subtle: #ddd;
         --accessibility-focus: #d46a00;
-  }
+    }
 }
 
 * {
@@ -173,11 +173,11 @@ main p {
 }
 
 main p + h2 {
-  margin-top: 15px;
+    margin-top: 15px;
 }
 
 main h2 + p {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 main h2 {
