@@ -8,7 +8,7 @@
     --txt-link: #4da6ff;
     --txt-link-hl: #2f88e1;
     --border-subtle: #222;
-    --accessibility-focus: #ffbb33;
+    --kb-focus: #ffbb33;
 }
 
 @media (prefers-color-scheme: light) {
@@ -22,7 +22,7 @@
         --txt-link: #06c;
         --txt-link-hl: #1e84ea;
         --border-subtle: #ddd;
-        --accessibility-focus: #d46a00;
+        --kb-focus: #d46a00;
     }
 }
 
@@ -33,7 +33,7 @@
 }
 
 *:focus-visible {
-    outline: 3px solid var(--accessibility-focus);
+    outline: 3px solid var(--kb-focus);
     outline-offset: 2px;
 }
 
