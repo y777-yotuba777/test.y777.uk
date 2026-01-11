@@ -14,7 +14,7 @@ EXCEPTIONS
 ----------
 The following content is NOT covered by CC0:
 - All files within: /withcopyright/*
-- All articles (reference: <article>...</article>, DM for details)
+- All articles (As a rough guideline: <article>...</article>, DM for details)
   © 2025-2026 y777_yotuba777. All Rights Reserved.
   → Requires explicit prior written permission for any use
 
