@@ -1,7 +1,7 @@
 :root {
     --bg-main: #000;
     --bg-sub: #111;
-    --bg-nav: rgba(22, 22, 22, 0.7);
+    --bg-nav: #222a;
     --txt-main: #fff;
     --txt-sub: #eee;
     --txt-ver: #aaa;
@@ -15,7 +15,7 @@
     :root {
         --bg-main: #eee;
         --bg-sub: #ddd;
-        --bg-nav: rgba(255, 255, 255, 0.7);
+        --bg-nav: #fffa;
         --txt-main: #000;
         --txt-sub: #222;
         --txt-ver: #444;
