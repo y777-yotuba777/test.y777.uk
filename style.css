@@ -5,8 +5,8 @@
     --txt-main: #fff;
     --txt-sub: #eee;
     --txt-ver: #aaa;
-    --txt-link: #4da6ff;
-    --txt-link-hl: #2f88e1;
+    --txt-link: #4af;
+    --txt-link-hl: #39e;
     --border-subtle: #222;
     --kb-focus: #ffbb33;
 }
@@ -19,8 +19,8 @@
         --txt-main: #000;
         --txt-sub: #222;
         --txt-ver: #444;
-        --txt-link: #06c;
-        --txt-link-hl: #1e84ea;
+        --txt-link: #00d;
+        --txt-link-hl: #11e;
         --border-subtle: #ddd;
         --kb-focus: #d46a00;
     }
