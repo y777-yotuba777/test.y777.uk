@@ -177,7 +177,7 @@ main .name {
 }
 
 main p {
-    font-size: clamp(14px, 2.5vw, 18rem);
+    font-size: clamp(14px, 2.5vw, 18px);
     text-align: left;
 }
 
@@ -287,23 +287,17 @@ footer {
 
 @media (prefers-reduced-motion: reduce) {
     .nav-menu {
-        transition: none;
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-    }
-
-    .nav-menu.active {
-        visibility: visible !important;
+        transform: none !important;
     }
 }
 
 @media (prefers-reduced-transparency: reduce) {
     :root {
-        --bg-nav: #222;
+        --bg-nav: #222 !important;
     }
     @media (prefers-color-scheme: light) {
         :root {
-            --bg-nav: #fff;
+            --bg-nav: #fff !important;
         }
     }
 }
