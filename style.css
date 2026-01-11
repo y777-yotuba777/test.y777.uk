@@ -8,7 +8,8 @@
     --txt-link: #4af;
     --txt-link-hl: #39e;
     --enh-light: #222d;
-    --kb-focus: #fb3;
+    --kb-focus-main: #fb3;
+    --kb-focus-sub: #04c;
 }
 
 @media (prefers-color-scheme: light) {
@@ -22,7 +23,8 @@
         --txt-link: #00d;
         --txt-link-hl: #11e;
         --enh-light: #fffd;
-        --kb-focus: #d60;
+        --kb-focus-main: #d60;
+        --kb-focus-sub: #29f;
     }
 }
 
@@ -37,8 +39,11 @@
 }
 
 *:focus-visible {
-    outline: 3px solid var(--kb-focus);
+    outline: 2px solid var(--kb-focus-main);
     outline-offset: 2px;
+    position: relative;
+    border: 2px solid var(--kb-focus-sub);
+    inset: -4px;
 }
 
 html, body {
