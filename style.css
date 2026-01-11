@@ -8,7 +8,7 @@
     --txt-link: #4af;
     --txt-link-hl: #39e;
     --border-subtle: #222;
-    --kb-focus: #ffbb33;
+    --kb-focus: #fb3;
 }
 
 @media (prefers-color-scheme: light) {
@@ -22,7 +22,7 @@
         --txt-link: #00d;
         --txt-link-hl: #11e;
         --border-subtle: #ddd;
-        --kb-focus: #d46a00;
+        --kb-focus: #d60;
     }
 }
 
