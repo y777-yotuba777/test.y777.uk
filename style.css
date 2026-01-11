@@ -7,7 +7,7 @@
     --txt-ver: #aaa;
     --txt-link: #4af;
     --txt-link-hl: #39e;
-    --border-subtle: #222;
+    --enh-light: #222;
     --kb-focus: #fb3;
 }
 
@@ -21,7 +21,7 @@
         --txt-ver: #444;
         --txt-link: #00d;
         --txt-link-hl: #11e;
-        --border-subtle: #fff;
+        --enh-light: #fff;
         --kb-focus: #d60;
     }
 }
@@ -119,7 +119,7 @@ header {
     max-height: calc(100vh - 120px);
     background-color: var(--bg-nav);
     backdrop-filter: blur(3px);
-    border: 1px solid var(--border-subtle);
+    border: 1px solid var(--enh-light);
     padding: clamp(20px, 5vw, 28px);
     border-radius: clamp(24px, 6vw, 35px);
     display: flex;
