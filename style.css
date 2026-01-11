@@ -133,7 +133,7 @@ header {
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-10px);
+    transform: translateX(-clamp(12px, 4vw, 20px)), translateY(-20px);
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
@@ -246,7 +246,7 @@ footer {
 }
 
 @media (max-width: 320px) {
-    .nav-menu { right: 12px; max-width: calc(100vw - 24px); padding: 20px; border-radius: 30px; }
+    .nav-menu { max-width: calc(100vw - 24px); padding: 20px; border-radius: 30px; }
     .footer-links { gap: 4px; flex-direction: column; }
 }
 
