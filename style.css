@@ -89,7 +89,7 @@ header {
 
 .header-menu-btn {
     background: none;
-    border: 1px solid var(--border-subtle);
+    border: 1px solid var(--enh-light);
     color: var(--txt-main);
     font-size: 20px;
     cursor: pointer;
