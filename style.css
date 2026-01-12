@@ -133,7 +133,7 @@ header {
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
-    transform: translate(calc(0 - clamp(12px, 4vw, 20px)), -20px);
+    transform: translate(calc(-1 * clamp(12px, 4vw, 20px)), -20px);
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
