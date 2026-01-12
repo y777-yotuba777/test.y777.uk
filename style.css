@@ -140,7 +140,7 @@ header {
 .nav-menu.active {
     opacity: 1;
     visibility: visible;
-    transform: none;
+    transform: translate(0, 0);
 }
 
 .nav-menu a {
