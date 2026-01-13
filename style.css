@@ -1,29 +1,31 @@
 :root {
     --bg-main: #000;
     --bg-sub: #111;
-    --bg-nav: rgba(22, 22, 22, 0.7);
+    --bg-nav: #222a;
     --txt-main: #fff;
     --txt-sub: #eee;
-    --txt-ver: #888;
-    --txt-link: #4da6ff;
-    --txt-link-hl: #2f88e1;
-    --border-subtle: #222;
-    --accessibility-focus: #ffbb33;
+    --txt-ver: #aaa;
+    --txt-link: #4af;
+    --txt-link-hl: #39e;
+    --enh-light: #222d;
+    --kb-focus-main: #fb3;
+    --kb-focus-sub: #04c;
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
+    :root {
         --bg-main: #eee;
-        --bg-sub: #fff;
-        --bg-nav: rgba(255, 255, 255, 0.7);
+        --bg-sub: #ddd;
+        --bg-nav: #fffa;
         --txt-main: #000;
         --txt-sub: #222;
-        --txt-ver: #888;
-        --txt-link: #0066cc;
-        --txt-link-hl: #1e84ea;
-        --border-subtle: #ddd;
-        --accessibility-focus: #d46a00;
-  }
+        --txt-ver: #444;
+        --txt-link: #00d;
+        --txt-link-hl: #11e;
+        --enh-light: #fffd;
+        --kb-focus-main: #d60;
+        --kb-focus-sub: #29f;
+    }
 }
 
 * {
@@ -32,9 +34,16 @@
     padding: 0;
 }
 
+*:focus {
+    outline: none;
+}
+
 *:focus-visible {
-    outline: 3px solid var(--accessibility-focus);
+    outline: 2px solid var(--kb-focus-main);
     outline-offset: 2px;
+    position: relative;
+    border: 2px solid var(--kb-focus-sub);
+    inset: -4px;
 }
 
 html, body {
@@ -51,6 +60,7 @@ html, body {
 
 a {
     color: var(--txt-link);
+    font-size: clamp(14px, 2.5vw, 18px);
     text-decoration: underline;
 }
 
@@ -79,7 +89,7 @@ header {
 
 .header-menu-btn {
     background: none;
-    border: 1px solid var(--border-subtle);
+    border: 1px solid var(--enh-light);
     color: var(--txt-main);
     font-size: 20px;
     cursor: pointer;
@@ -114,7 +124,7 @@ header {
     max-height: calc(100vh - 120px);
     background-color: var(--bg-nav);
     backdrop-filter: blur(3px);
-    border: 1px solid var(--border-subtle);
+    border: 1px solid var(--enh-light);
     padding: clamp(20px, 5vw, 28px);
     border-radius: clamp(24px, 6vw, 35px);
     display: flex;
@@ -123,19 +133,19 @@ header {
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-10px);
+    transform: translate(clamp(12px, 4vw, 20px), -20px);
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
 .nav-menu.active {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translate(0, 0);
 }
 
 .nav-menu a {
     color: var(--txt-main);
-    font-size: 1.5rem;
+    font-size: clamp(17px, 5.5vw, 24px);
     text-decoration: none;
     text-align: center;
     font-weight: 500;
@@ -152,13 +162,13 @@ main {
 
 main .title {
     top: -10px;
-    font-size: clamp(1.2rem, 8vw, 4rem);
+    font-size: clamp(32px, 8vw, 64px);
     font-weight: normal;
     text-align: center;
 }
 
 main .name {
-    font-size: clamp(1.2rem, 8vw, 4rem);
+    font-size: clamp(24px, 7vw, 64px);
     font-weight: normal;
     align-items: center;
     text-align: center;
@@ -167,20 +177,20 @@ main .name {
 }
 
 main p {
-    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    font-size: clamp(14px, 2.5vw, 18px);
     text-align: left;
 }
 
 main p + h2 {
-  margin-top: 15px;
+    margin-top: 10px;
 }
 
 main h2 + p {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 main h2 {
-    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    font-size: clamp(22px, 5vw, 32px);
     font-weight: normal;
 }
 
@@ -203,7 +213,7 @@ footer {
 }
 
 .footer-section h3 {
-    font-size: 12px;
+    font-size: clamp(16px, 3vw, 22px);
     font-weight: normal;
     color: var(--txt-main);
     margin-bottom: 4px;
@@ -237,14 +247,12 @@ footer {
 
 @media (max-width: 320px) {
     .nav-menu { right: 12px; max-width: calc(100vw - 24px); padding: 20px; border-radius: 30px; }
-    .nav-menu a { font-size: 1.1rem; }
     .footer-links { gap: 4px; flex-direction: column; }
-    .footer-links a { font-size: 11px; }
 }
 
 @media (min-width: 321px) and (max-width: 480px) {
-    .nav-menu a { font-size: 1.2rem; }
-    .footer-links a { font-size: 12px; }
+    /* Previously existed but is now unnecessary due to clamp support */
+    /* Previously existed but has now been consolidated into the max-width 600px section */
 }
 
 @media (min-width: 481px) and (max-width: 600px) {
@@ -279,23 +287,17 @@ footer {
 
 @media (prefers-reduced-motion: reduce) {
     .nav-menu {
-        transition: none;
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-    }
-
-    .nav-menu.active {
-        visibility: visible !important;
+        transform: none !important;
     }
 }
 
 @media (prefers-reduced-transparency: reduce) {
     :root {
-        --bg-nav: #222;
+        --bg-nav: #222 !important;
     }
     @media (prefers-color-scheme: light) {
         :root {
-            --bg-nav: #fff;
+            --bg-nav: #fff !important;
         }
     }
 }
