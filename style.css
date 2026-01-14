@@ -1,7 +1,7 @@
 :root {
     --bg-main: #000;
     --bg-sub: #111;
-    --bg-nav: #222a;
+    --bg-nav: #8881;
     --txt-main: #fff;
     --txt-sub: #eee;
     --txt-ver: #aaa;
@@ -16,7 +16,7 @@
     :root {
         --bg-main: #eee;
         --bg-sub: #ddd;
-        --bg-nav: #fffa;
+        --bg-nav: #8881;
         --txt-main: #000;
         --txt-sub: #222;
         --txt-ver: #444;
@@ -35,15 +35,17 @@
 }
 
 *:focus {
-    outline: none;
-}
-
-*:focus-visible {
     outline: 2px solid var(--kb-focus-main);
     outline-offset: 2px;
     position: relative;
     border: 2px solid var(--kb-focus-sub);
     inset: -4px;
+}
+
+*:focus:not(:focus-visible) {
+    outline: none;
+    border: none;
+    inset: 0;
 }
 
 html, body {
@@ -124,6 +126,7 @@ header {
     max-height: calc(100vh - 120px);
     background-color: var(--bg-nav);
     backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
     border: 1px solid var(--enh-light);
     padding: clamp(20px, 5vw, 28px);
     border-radius: clamp(24px, 6vw, 35px);
@@ -150,7 +153,7 @@ header {
     text-align: center;
     font-weight: 500;
     white-space: nowrap;
-    text-shadow: 0 0 3px var(--bg-main);
+    text-shadow: 0 0 2px var(--bg-main);
 }
 
 main {
