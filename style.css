@@ -7,6 +7,7 @@
     --txt-ver: #aaa;
     --txt-link: #4af;
     --txt-link-hl: #39e;
+    --txt-shadow: #000
     --enh-light: #fff1;
     --kb-focus-main: #fb3;
     --kb-focus-sub: #04c;
@@ -22,6 +23,7 @@
         --txt-ver: #444;
         --txt-link: #00d;
         --txt-link-hl: #11e;
+        --txt-shadow: #fff
         --enh-light: #fff1;
         --kb-focus-main: #d60;
         --kb-focus-sub: #29f;
@@ -153,7 +155,7 @@ header {
     text-align: center;
     font-weight: 500;
     white-space: nowrap;
-    text-shadow: 0 0 2px var(--bg-main);
+    text-shadow: 0 0 3px var(--txt-shadow);
 }
 
 main {
