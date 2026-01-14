@@ -51,7 +51,6 @@
 }
 
 html, body {
-    overscroll-behavior: none;
     -webkit-overflow-scrolling: touch;
     background-color: var(--bg-sub);
     color: var(--txt-main);
@@ -75,9 +74,9 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0 clamp(12px, 5vw, 24px);
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 2000;
+    z-index: 98;
 }
 
 .header-logo {
@@ -118,6 +117,7 @@ header {
     flex: 1;
     border-radius: 30px;
     margin: 0;
+    padding-top: 40px;
     position: relative;
 }
 
@@ -135,7 +135,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    z-index: 1000;
+    z-index: 99;
     opacity: 0;
     visibility: hidden;
     transform: translate(clamp(12px, 4vw, 20px), -20px);
