@@ -8,7 +8,7 @@
     --txt-link: #4af;
     --txt-link-hl: #39e;
     --txt-shadow: #000;
-    --enh-light: #fff1;
+    --enh-light: #fff2;
     --kb-focus-main: #fb3;
     --kb-focus-sub: #04c;
 }
@@ -24,7 +24,7 @@
         --txt-link: #00d;
         --txt-link-hl: #11e;
         --txt-shadow: #fff;
-        --enh-light: #fff1;
+        --enh-light: #fff2;
         --kb-focus-main: #d60;
         --kb-focus-sub: #29f;
     }
