@@ -126,7 +126,6 @@ header {
     max-height: calc(100vh - 120px);
     background-color: var(--bg-nav);
     backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
     border: 1px solid var(--enh-light);
     padding: clamp(20px, 5vw, 28px);
     border-radius: clamp(24px, 6vw, 35px);
