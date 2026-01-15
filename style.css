@@ -118,7 +118,7 @@ header {
     display: flex;
     flex-direction: column;
     flex: 1;
-    border-radius: calc(clamp(24px, 6vw, 35px) + clamp(12px, 4vw, 20px);
+    border-radius: calc(clamp(24px, 6vw, 35px) + clamp(12px, 4vw, 20px));
     margin-top: 40px;
     position: relative;
 }
