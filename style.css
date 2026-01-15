@@ -118,14 +118,14 @@ header {
     display: flex;
     flex-direction: column;
     flex: 1;
-    border-radius: 30px;
+    border-radius: calc(clamp(24px, 6vw, 35px) + clamp(12px, 4vw, 20px);
     margin-top: 40px;
     position: relative;
 }
 
 .nav-menu {
     position: fixed;
-    top: 60px;
+    top: calc(40px + clamp(12px, 4vw, 20px));
     right: clamp(12px, 4vw, 20px);
     max-height: calc(100vh - 120px);
     background-color: var(--bg-nav);
@@ -140,7 +140,7 @@ header {
     z-index: 99;
     opacity: 0;
     visibility: hidden;
-    transform: translate(clamp(12px, 4vw, 20px), -20px);
+    transform: translate(clamp(12px, 4vw, 20px), calc(-1 * clamp(12px, 4vw, 20px)));
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
