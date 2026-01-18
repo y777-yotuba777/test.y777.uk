@@ -70,7 +70,7 @@ a {
 
 header {
     background-color: var(--bg-sub);
-    height: 40px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -89,7 +89,7 @@ header {
 }
 
 .logo-img {
-    height: 36px;
+    height: 45px;
     vertical-align: middle;
 }
 
@@ -97,10 +97,10 @@ header {
     background: none;
     border: 1px solid var(--enh-light);
     color: var(--txt-main);
-    font-size: 20px;
+    font-size: 25px;
     cursor: pointer;
-    width: 36px;
-    height: 36px;
+    width: 45px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -119,15 +119,15 @@ header {
     flex-direction: column;
     flex: 1;
     border-radius: calc(clamp(24px, 6vw, 35px) + clamp(12px, 4vw, 20px));
-    margin-top: 40px;
+    margin-top: 50px;
     position: relative;
 }
 
 .nav-menu {
     position: fixed;
-    top: calc(40px + clamp(12px, 4vw, 20px));
+    top: calc(50px + clamp(12px, 4vw, 20px));
     right: clamp(12px, 4vw, 20px);
-    max-height: calc(100vh - 120px);
+    max-height: calc(100vh - 62px);
     background-color: var(--bg-nav);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
