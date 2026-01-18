@@ -74,7 +74,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 clamp(12px, 5vw, 24px);
+    padding: 0 clamp(12px, 4vw, 20px);
     position: fixed;
     top: 0;
     left: 0;
@@ -109,7 +109,7 @@ header {
 }
 
 .header-menu-btn::after {
-    content: "⋮";
+    content: "⋯";
     font-weight: bold;
 }
 
