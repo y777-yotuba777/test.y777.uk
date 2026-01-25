@@ -295,6 +295,7 @@ footer {
     }
 
     .nav-menu a:hover {
+        color: var(--txt-main);
         opacity: 0.7;
     }
 }
